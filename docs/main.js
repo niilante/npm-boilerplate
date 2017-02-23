@@ -21,8 +21,8 @@ Object.defineProperty(exports, "__esModule", {
 });
 /**
  * hello world function. Returns Hello + `name`
- * @param  {String} [name='World'] the name use (defaults to `'World'`)
- * @return {String}      'Hello' + `name`
+ * @param  {String} [name='World'] the `name` to use (defaults to `'World'`)
+ * @return {String} returns 'Hello' + `name`
  */
 var hello = function hello() {
   var name = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'World';

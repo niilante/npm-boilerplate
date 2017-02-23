@@ -14,7 +14,8 @@
     "prerelease": "npm run babel; npm test",
     "posttest": "npm run lint",
     "release": "standard-version --no-verify",
-    "server": "cd docs && http-server",
+    "server": "node ./scripts/serve",
+    "dev": "node ./scripts/dev",
     "start": "npm run build && npm run server",
     "test": "jest --no-cache --coverage",
     "watch": "NODE_ENV=development node ./scripts/watch"
@@ -74,5 +75,6 @@
   },
   "jest": {
     "testRegex": ".*/src/(.*/)?spec/.*\\.js$"
-  }
+  },
+  "devPort": 3100
 }
