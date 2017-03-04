@@ -1,28 +1,14 @@
 {
   "ignore": [
-    "**/deps/**",
     "**/node_modules/**",
-    "**/thirdparty/**",
-    "**/third_party/**",
-    "**/vendor/**",
-    "**/**-min-**",
-    "**/**-min.**",
     "**/**.min.**",
-    "**/**?(*).ts",
     "**/dist/**",
     "**/docs/**",
-    "/index.js",
-    "bower_components/**"
+    "/index.js"
   ],
   "test": [
-    "**/test/**",
-    "**/tests/**",
-    "**/spec/**",
-    "**/specs/**"
+    "**/spec/**"
   ],
-  "dependencies": {
-    "unused-ignores": []
-  },
   "critics": {
     "lint": {
       "engine": "none"
