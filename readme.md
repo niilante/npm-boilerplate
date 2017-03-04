@@ -12,6 +12,10 @@ A modern boilerplate for npm things with wings.
 [![Standard Version](https://img.shields.io/badge/release-standard%20version-44aa44.svg?style=flat-square)](https://github.com/conventional-changelog/standard-version)
 
 
+## Links
+* [Documentation](https://pixelass.github.io/npm-boilerplate/api/) (Example)
+* [Demo](https://pixelass.github.io/npm-boilerplate/) (Example)
+
 ## Getting started
 
 Clone this repository and use it as a starting point.
