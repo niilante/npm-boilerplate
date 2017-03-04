@@ -6,14 +6,16 @@ A modern boilerplate for npm things with wings.
 [![GitHub issues](https://img.shields.io/github/issues/pixelass/npm-boilerplate.svg?style=flat-square)](https://github.com/pixelass/npm-boilerplate/issues)
 [![Coveralls](https://img.shields.io/coveralls/pixelass/npm-boilerplate.svg?style=flat-square)](https://coveralls.io/github/pixelass/npm-boilerplate)
 [![bitHound](https://img.shields.io/bithound/code/github/pixelass/npm-boilerplate.svg?style=flat-square)](https://www.bithound.io/github/pixelass/npm-boilerplate)
+[![bitHound](https://img.shields.io/bithound/devDependencies/github/pixelass/npm-boilerplate.svg?style=flat-square)](https://www.bithound.io/github/pixelass/npm-boilerplate)
 
 [![Browserify](https://img.shields.io/badge/build-browserify-3c6991.svg?style=flat-square)](http://browserify.org/)
 [![Babel](https://img.shields.io/badge/babel-stage--0-f5da55.svg?style=flat-square)](http://babeljs.io/docs/plugins/preset-stage-0/)
 [![code style xo](https://img.shields.io/badge/code_style-XO-64d8c7.svg?style=flat-square)](https://github.com/sindresorhus/xo)
+[![Standard Version](https://img.shields.io/badge/release-standard%20version-44aa44.svg?style=flat-square)](https://github.com/conventional-changelog/standard-version)
 [![test ava](https://img.shields.io/badge/test-🚀_AVA-0e1d5c.svg?style=flat-square)](https://github.com/avajs/ava)
+
 [![yarn](https://img.shields.io/badge/yarn-friendly-2c8ebb.svg?style=flat-square)](https://yarnpkg.com/)
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-44aa44.svg?style=flat-square)](http://commitizen.github.io/cz-cli/)
-[![Standard Version](https://img.shields.io/badge/release-standard%20version-44aa44.svg?style=flat-square)](https://github.com/conventional-changelog/standard-version)
 [![CSS modules](https://img.shields.io/badge/css--modules-ready-aa4444.svg?style=flat-square)](https://github.com/css-modules/css-modulesify)
 [![CSS next](https://img.shields.io/badge/css--next-ready-aa4444.svg?style=flat-square)](http://cssnext.io/)
 

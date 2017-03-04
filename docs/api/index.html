@@ -46,13 +46,18 @@
 
     <section class="readme">
         <article class="card"><h1>NPM BOILERPLATE</h1><p>A modern boilerplate for npm things with wings.</p>
+<p><a href="https://raw.githubusercontent.com/pixelass/npm-boilerplate/master/LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square" alt="GitHub license"></a>
+<a href="https://github.com/pixelass/npm-boilerplate/issues"><img src="https://img.shields.io/github/issues/pixelass/npm-boilerplate.svg?style=flat-square" alt="GitHub issues"></a>
+<a href="https://coveralls.io/github/pixelass/npm-boilerplate"><img src="https://img.shields.io/coveralls/pixelass/npm-boilerplate.svg?style=flat-square" alt="Coveralls"></a>
+<a href="https://www.bithound.io/github/pixelass/npm-boilerplate"><img src="https://img.shields.io/bithound/code/github/pixelass/npm-boilerplate.svg?style=flat-square" alt="bitHound"></a>
+<a href="https://www.bithound.io/github/pixelass/npm-boilerplate"><img src="https://img.shields.io/bithound/devDependencies/github/pixelass/npm-boilerplate.svg?style=flat-square" alt="bitHound"></a></p>
 <p><a href="http://browserify.org/"><img src="https://img.shields.io/badge/build-browserify-3c6991.svg?style=flat-square" alt="Browserify"></a>
 <a href="http://babeljs.io/docs/plugins/preset-stage-0/"><img src="https://img.shields.io/badge/babel-stage--0-f5da55.svg?style=flat-square" alt="Babel"></a>
 <a href="https://github.com/sindresorhus/xo"><img src="https://img.shields.io/badge/code_style-XO-64d8c7.svg?style=flat-square" alt="code style xo"></a>
-<a href="https://github.com/avajs/ava"><img src="https://img.shields.io/badge/test-🚀_AVA-0e1d5c.svg?style=flat-square" alt="test ava"></a>
-<a href="https://yarnpkg.com/"><img src="https://img.shields.io/badge/yarn-friendly-2c8ebb.svg?style=flat-square" alt="yarn"></a>
-<a href="http://commitizen.github.io/cz-cli/"><img src="https://img.shields.io/badge/commitizen-friendly-44aa44.svg?style=flat-square" alt="Commitizen friendly"></a>
 <a href="https://github.com/conventional-changelog/standard-version"><img src="https://img.shields.io/badge/release-standard%20version-44aa44.svg?style=flat-square" alt="Standard Version"></a>
+<a href="https://github.com/avajs/ava"><img src="https://img.shields.io/badge/test-🚀_AVA-0e1d5c.svg?style=flat-square" alt="test ava"></a></p>
+<p><a href="https://yarnpkg.com/"><img src="https://img.shields.io/badge/yarn-friendly-2c8ebb.svg?style=flat-square" alt="yarn"></a>
+<a href="http://commitizen.github.io/cz-cli/"><img src="https://img.shields.io/badge/commitizen-friendly-44aa44.svg?style=flat-square" alt="Commitizen friendly"></a>
 <a href="https://github.com/css-modules/css-modulesify"><img src="https://img.shields.io/badge/css--modules-ready-aa4444.svg?style=flat-square" alt="CSS modules"></a>
 <a href="http://cssnext.io/"><img src="https://img.shields.io/badge/css--next-ready-aa4444.svg?style=flat-square" alt="CSS next"></a></p>
 <h2>Links</h2><ul>
@@ -131,6 +136,30 @@ Then simple run the init script to update the original <code>package.json</code>
       &quot;number-leading-zero&quot;: null
     }
   }
+}</code></pre><h3>Code quality</h3><ul>
+<li><a href="https://bithound.io/">bithound</a></li>
+</ul>
+<p>You can change the rules inside the <code>.bithound</code> file. </p>
+<p><strong>defaults</strong></p>
+<pre class="prettyprint source lang-json"><code>{
+  &quot;ignore&quot;: [
+    &quot;**/node_modules/**&quot;,
+    &quot;**/**.min.**&quot;,
+    &quot;**/dist/**&quot;,
+    &quot;**/docs/**&quot;,
+    &quot;/index.js&quot;
+  ],
+  &quot;test&quot;: [
+    &quot;**/spec/**&quot;
+  ],
+  &quot;critics&quot;: {
+    &quot;lint&quot;: {
+      &quot;engine&quot;: &quot;none&quot;
+    },
+    &quot;wc&quot;: {
+      &quot;limit&quot;: 5000
+    }
+  }
 }</code></pre><h3>Testing</h3><ul>
 <li><a href="https://github.com/avajs/ava/">Ava</a></li>
 <li><a href="https://coveralls.io">Coveralls</a></li>
@@ -160,7 +189,39 @@ Then simple run the init script to update the original <code>package.json</code>
     ],
     &quot;babel&quot;: &quot;inherit&quot;
   }
-}</code></pre><h3>CSS (optional)</h3><ul>
+}</code></pre><h3>Documentation</h3><ul>
+<li><a href="http://usejsdoc.org/">jsdoc</a></li>
+<li><a href="https://www.npmjs.com/package/hopsdoc">hopsdoc</a></li>
+</ul>
+<p>You can change the rules inside the <code>jsdoc.json</code> file.</p>
+<p><strong>defaults</strong></p>
+<pre class="prettyprint source lang-json"><code>{
+  &quot;tags&quot;: {
+    &quot;allowUnknownTags&quot;: true,
+    &quot;dictionaries&quot;: [&quot;jsdoc&quot;]
+  },
+  &quot;plugins&quot;: [
+    &quot;plugins/markdown&quot;
+  ],
+  &quot;templates&quot;: {
+    &quot;cleverLinks&quot;: true,
+    &quot;monospaceLinks&quot;: true
+  },
+  &quot;source&quot;: {
+    &quot;include&quot;: [&quot;src&quot;, &quot;README.md&quot;],
+    &quot;includePattern&quot;: &quot;\\.js$&quot;,
+    &quot;excludePattern&quot;: &quot;(node_modules/|docs|coverage|lib)&quot;
+  },
+  &quot;opts&quot;: {
+    &quot;encoding&quot;: &quot;utf8&quot;,
+    &quot;destination&quot;: &quot;./docs/api&quot;,
+    &quot;private&quot;: false,
+    &quot;recurse&quot;: true,
+    &quot;template&quot;: &quot;node_modules/hopsdoc&quot;
+  }
+}</code></pre><p>Hopsdoc is a fully responsive theme that allows custom themes.
+You can simply remove it and load a different theme.</p>
+<pre class="prettyprint source lang-shell"><code>yarn remove hopsdoc</code></pre><h3>CSS (optional)</h3><ul>
 <li><a href="https://github.com/css-modules/css-modulesify">css-modulesify</a> (disabled)</li>
 <li><a href="http://cssnext.io/">cssnext</a> (disabled)</li>
 </ul>
@@ -181,7 +242,7 @@ simply install the dependency and follow the comments inside <code>scripts/run-b
 
 
 <footer class="main-footer">
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.3</a> on Sat Mar 04 2017 20:04:25 GMT+0100 (CET)
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.3</a> on Sat Mar 04 2017 21:26:25 GMT+0100 (CET)
 </footer>
 
 <script>prettyPrint();</script>
