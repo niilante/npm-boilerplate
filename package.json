@@ -22,7 +22,8 @@
   "scripts": {
     "babel": "babel src --out-dir lib",
     "build": "NODE_ENV=production node ./scripts/build",
-    "coveralls": "cat ./coverage/lcov.info | coveralls",
+    "coveralls": "nyc report --reporter=text-lcov | coveralls",
+    "report": "nyc report --reporter=html",
     "docs": "rm -rf docs/api && mkdir docs/api && jsdoc -c jsdoc.json",
     "lint": "npm run eslint; npm run stylelint",
     "stylelint": "stylelint {demo,src}/**/*.{css,less,scss}",
@@ -34,7 +35,7 @@
     "server": "node ./scripts/serve",
     "dev": "node ./scripts/dev",
     "start": "npm run build && npm run server",
-    "test": "ava --tap | tap-nyan",
+    "test": "nyc ava --tap | tap-nyan",
     "watch": "NODE_ENV=development node ./scripts/watch"
   },
   "config": {
@@ -73,7 +74,12 @@
     "presets": [
       "es2015",
       "stage-0"
-    ]
+    ],
+    "env": {
+      "development": {
+        "sourceMaps": "inline"
+      }
+    }
   },
   "xo": {
     "space": true,
@@ -104,5 +110,7 @@
     ],
     "babel": "inherit"
   },
-  "dependencies": {}
+  "dependencies": {
+    "nyc": "^10.1.2"
+  }
 }

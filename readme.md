@@ -176,6 +176,50 @@ You can change the rules inside the `package.json` file.
 }
 ```
 
+### Documentation
+
+* [jsdoc](http://usejsdoc.org/)
+* [hopsdoc](https://www.npmjs.com/package/hopsdoc)
+
+You can change the rules inside the `jsdoc.json` file.
+
+**defaults**
+
+```json
+{
+  "tags": {
+    "allowUnknownTags": true,
+    "dictionaries": ["jsdoc"]
+  },
+  "plugins": [
+    "plugins/markdown"
+  ],
+  "templates": {
+    "cleverLinks": true,
+    "monospaceLinks": true
+  },
+  "source": {
+    "include": ["src", "README.md"],
+    "includePattern": "\\.js$",
+    "excludePattern": "(node_modules/|docs|coverage|lib)"
+  },
+  "opts": {
+    "encoding": "utf8",
+    "destination": "./docs/api",
+    "private": false,
+    "recurse": true,
+    "template": "node_modules/hopsdoc"
+  }
+}
+```
+
+Hopsdoc is a fully responsive theme that allows custom themes.
+You can simply remove it and load a different theme.
+
+```shell
+yarn remove hopsdoc
+```
+
 ### CSS (optional)
 
 * [css-modulesify](https://github.com/css-modules/css-modulesify) (disabled)
