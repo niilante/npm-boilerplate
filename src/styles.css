@@ -1,0 +1,18 @@
+.selector__1 {
+  background: red;
+}
+
+.selector__2 {
+  background: green;
+}
+
+.selector__3 {
+  background: blue;
+}
+
+.selector__1,
+.selector__2,
+.selector__3 {
+  display: block;
+  height: 100px;
+}

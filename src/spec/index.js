@@ -1,13 +1,14 @@
-/* eslint-env jest */
-
+import test from 'ava'
 import hello from '..'
 
-describe('hello', () => {
-  it('returns a string', () => {
-    expect(typeof hello()).toEqual('string')
-  })
+test('hello returns a string', t => {
+  t.true(typeof hello() === 'string')
+})
 
-  it('allows setting a name', () => {
-    expect(hello('World')).toEqual('Hello World')
-  })
+test('hello("NPM") returns "Hello NPM"', t => {
+  t.true(hello('NPM') === 'Hello NPM')
+})
+
+test('hello() defaults to  "Hello World"', t => {
+  t.true(hello() === 'Hello World')
 })

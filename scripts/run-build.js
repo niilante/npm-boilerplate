@@ -1,9 +1,10 @@
+const exec = require('child_process').exec
 const fs = require('fs')
 const Log = require('log')
 const browserify = require('browserify')
 const watchify = require('watchify')
 const errorify = require('errorify')
-const exec = require('child_process').exec
+const pkg = require('../package.json')
 
 const log = new Log('info')
 const fileMap = {
@@ -18,15 +19,17 @@ const outFiles = files.map(file => {
   return `${buildFolder}/${fileMap[file]}.js`
 }).join(' ')
 
-module.exports = (watch) => {
-  exec(`rm -rf ${outFiles} ${buildFolder}/index.html`, (err) => {
+module.exports = watch => {
+  exec(`rm -rf ${outFiles} ${buildFolder}/index.html`, err => {
     if (err) {
       throw err
     }
 
-    exec(`cp ${srcFolder}/index.html ${buildFolder}/index.html; cp ${srcFolder}/favico.png ${buildFolder}/favico.png`, (error) => {
-      if (error) {
-        throw error
+    exec(`cp ${srcFolder}/index.html ${buildFolder}/index.html;
+          cp ${srcFolder}/favico.png ${buildFolder}/favico.png
+    `, err => {
+      if (err) {
+        throw err
       }
     })
 
@@ -42,7 +45,7 @@ module.exports = (watch) => {
         plugin
       })
 
-      function bundle () {
+      function bundle() {
         b.bundle().pipe(fs.createWriteStream(`${outFile}.js`))
       }
 

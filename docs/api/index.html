@@ -45,7 +45,122 @@
 
 
     <section class="readme">
-        <article class="card"><h1>NPM BOILERPLATE</h1><p> a simple boilerplate for npm things with wings</p></article>
+        <article class="card"><h1>NPM BOILERPLATE</h1><p>A modern boilerplate for npm things with wings.</p>
+<p><a href="http://browserify.org/"><img src="https://img.shields.io/badge/build-browserify-3c6991.svg?style=flat-square" alt="Browserify"></a>
+<a href="http://babeljs.io/docs/plugins/preset-stage-0/"><img src="https://img.shields.io/badge/babel-stage--0-f5da55.svg?style=flat-square" alt="Babel"></a>
+<a href="https://github.com/sindresorhus/xo"><img src="https://img.shields.io/badge/code_style-XO-64d8c7.svg?style=flat-square" alt="code style xo"></a>
+<a href="https://github.com/avajs/ava"><img src="https://img.shields.io/badge/test-🚀_ava-0e1d5c.svg?style=flat-square" alt="test ava"></a>
+<a href="https://yarnpkg.com/"><img src="https://img.shields.io/badge/yarn-friendly-2c8ebb.svg?style=flat-square" alt="yarn"></a>
+<a href="http://commitizen.github.io/cz-cli/"><img src="https://img.shields.io/badge/commitizen-friendly-44aa44.svg?style=flat-square" alt="Commitizen friendly"></a>
+<a href="https://github.com/conventional-changelog/standard-version"><img src="https://img.shields.io/badge/release-standard%20version-44aa44.svg?style=flat-square" alt="Standard Version"></a></p>
+<h2>Getting started</h2><p>Clone this repository and use it as a starting point.</p>
+<pre class="prettyprint source lang-shell"><code>git clone git@github.com:pixelass/npm-boilerplate.git my-npm-module
+cd my-npm-module
+## use yarn
+yarn
+## or npm
+## npm i</code></pre><h2>Reset git</h2><pre class="prettyprint source lang-shell"><code>cd my-npm-module
+rm -rf .git
+git init</code></pre><h2>Run package config</h2><p>Use the <code>package.config.json</code> file to enter your own package data.
+Then simple run the init script to update the original <code>package.json</code> of this project</p>
+<pre class="prettyprint source lang-shell"><code>node scripts/npm-init</code></pre><p>after that you can remove the config files</p>
+<pre class="prettyprint source lang-shell"><code>rm -rf package.config.json scripts/npm-init.js</code></pre><h2>Developing</h2><p>To start a dev server and start developing try the following commands</p>
+<ul>
+<li><code>start</code>: starts the dev server and builds the required files</li>
+<li><code>test</code>: runs test and lints files</li>
+<li><code>run dev</code>: starts the dev server and watches the required files</li>
+<li><code>run babel</code>: generates lib from source</li>
+<li><code>run build</code>: builds all files from source</li>
+<li><code>run watch</code>: builds and watches all files from source</li>
+<li><code>run lint</code>: lints javascript files</li>
+<li><code>run release</code>: release new version using &quot;standard-version&quot;</li>
+</ul>
+<h3>Examples</h3><p><strong>Starts a simple http-server</strong></p>
+<pre class="prettyprint source"><code>npm start</code></pre><p><strong>Starts a simple http-server and watches files</strong></p>
+<pre class="prettyprint source"><code>npm run dev</code></pre><h2>What's included?</h2><h3>Transforms</h3><ul>
+<li><a href="http://babeljs.io/">Babel</a><ul>
+<li><a href="http://babeljs.io/docs/plugins/preset-stage-0/">stage 0</a></li>
+<li><a href="http://babeljs.io/docs/plugins/preset-es2015/">es2015</a></li>
+</ul>
+</li>
+<li><a href="http://browserify.org/">Browserify</a></li>
+</ul>
+<p>You can change the rules inside the <code>package.json</code> file.</p>
+<ul>
+<li><code>babel</code>: <code>{&lt;SETTINGS&gt;}</code></li>
+<li><code>browserify</code>: <code>{&lt;SETTINGS&gt;}</code></li>
+</ul>
+<p><strong>defaults</strong></p>
+<pre class="prettyprint source lang-json"><code>{
+  &quot;babel&quot;: {
+    &quot;presets&quot;: [
+      &quot;es2015&quot;,
+      &quot;stage-0&quot;
+    ]
+  },
+  &quot;browserify&quot;: {
+    &quot;transform&quot;: [
+      &quot;babelify&quot;
+    ]
+  }
+}</code></pre><h3>Coding style</h3><ul>
+<li>CSS: <a href="https://stylelint.io/">stylelint</a></li>
+<li>JS: <a href="https://github.com/sindresorhus/xo">xo</a></li>
+</ul>
+<p>You can change the rules inside the <code>package.json</code> file.</p>
+<ul>
+<li><code>xo</code>: <code>{&lt;SETTINGS&gt;}</code></li>
+<li><code>stylelint</code>: <code>{&lt;SETTINGS&gt;}</code></li>
+</ul>
+<p><strong>defaults</strong></p>
+<pre class="prettyprint source lang-json"><code>{
+  &quot;xo&quot;: {
+    &quot;space&quot;: true,
+    &quot;semicolon&quot;: false,
+    &quot;ignore&quot;: [
+      &quot;scripts/**/*.js&quot;,
+      &quot;docs/**/*.js&quot;,
+      &quot;coverage/**/*.js&quot;,
+      &quot;lib/**/*.js&quot;
+    ]
+  }
+  &quot;stylelint&quot;: {
+    &quot;extends&quot;: &quot;stylelint-config-standard&quot;,
+    &quot;rules&quot;: {
+      &quot;indentation&quot;: 2,
+      &quot;number-leading-zero&quot;: null
+    }
+  }
+}</code></pre><h3>Testing</h3><ul>
+<li><a href="https://github.com/avajs/ava/">Ava</a></li>
+<li><a href="https://coveralls.io">Coveralls</a></li>
+<li><a href="https://github.com/calvinmetcalf/tap-nyan">tap-nyan (for some fun)</a></li>
+</ul>
+<p>You can change the rules inside the <code>package.json</code> file.</p>
+<ul>
+<li><code>ava</code>: <code>{&lt;SETTINGS&gt;}</code></li>
+</ul>
+<p><strong>defaults</strong></p>
+<pre class="prettyprint source lang-json"><code>{
+  &quot;ava&quot;: {
+    &quot;files&quot;: [
+      &quot;src/**/spec/*.js&quot;
+    ],
+    &quot;source&quot;: [
+      &quot;src/**/*.js&quot;
+    ],
+    &quot;presets&quot;: [
+      &quot;@ava/stage-4&quot;,
+      &quot;@ava/transform-test-files&quot;
+    ],
+    &quot;failFast&quot;: true,
+    &quot;tap&quot;: true,
+    &quot;require&quot;: [
+      &quot;babel-register&quot;
+    ],
+    &quot;babel&quot;: &quot;inherit&quot;
+  }
+}</code></pre></article>
     </section>
 
 
@@ -58,7 +173,7 @@
 
 
 <footer class="main-footer">
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.3</a> on Thu Feb 23 2017 10:38:18 GMT+0100 (CET)
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.3</a> on Sat Mar 04 2017 18:30:20 GMT+0100 (CET)
 </footer>
 
 <script>prettyPrint();</script>

@@ -1,0 +1,19 @@
+{
+  "name": "modern-npm-boilerplate",
+  "version": "1.0.0",
+  "description": "a modern boilerplate for npm things with wings",
+  "author": "Gregor Adams <greg@pixelass.com>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pixelass/npm-boilerplate.git"
+  },
+  "keywords": [
+    "npm",
+    "boilerplate",
+    "yarn"
+  ],
+  "bugs": {
+    "url": "https://github.com/pixelass/npm-boilerplate/issues"
+  },
+  "homepage": "https://github.com/pixelass/npm-boilerplate#readme"
+}

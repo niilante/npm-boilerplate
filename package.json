@@ -1,39 +1,50 @@
 {
-  "name": "npm-boilerplate",
+  "name": "modern-npm-boilerplate",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "a modern boilerplate for npm things with wings",
+  "author": "Gregor Adams <greg@pixelass.com>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pixelass/npm-boilerplate.git"
+  },
+  "keywords": [
+    "npm",
+    "boilerplate",
+    "yarn"
+  ],
+  "bugs": {
+    "url": "https://github.com/pixelass/npm-boilerplate/issues"
+  },
+  "homepage": "https://github.com/pixelass/npm-boilerplate#readme",
+  "license": "MIT",
+  "devPort": 3000,
+  "main": "lib/index.js",
   "scripts": {
     "babel": "babel src --out-dir lib",
-    "build": "node ./scripts/build",
+    "build": "NODE_ENV=production node ./scripts/build",
     "coveralls": "cat ./coverage/lcov.info | coveralls",
     "docs": "rm -rf docs/api && mkdir docs/api && jsdoc -c jsdoc.json",
-    "lint": "eslint .",
-    "prebuild": "NODE_ENV=production",
-    "prepush": "jest --no-cache",
+    "lint": "npm run eslint; npm run stylelint",
+    "stylelint": "stylelint {demo,src}/**/*.{css,less,scss}",
+    "eslint": "xo {demo,src}/**/*.js",
+    "prepush": "npm test",
     "prerelease": "npm run babel; npm test",
     "posttest": "npm run lint",
     "release": "standard-version --no-verify",
     "server": "node ./scripts/serve",
     "dev": "node ./scripts/dev",
     "start": "npm run build && npm run server",
-    "test": "jest --no-cache --coverage",
+    "test": "ava --tap | tap-nyan",
     "watch": "NODE_ENV=development node ./scripts/watch"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/pixelass/npm-boilerplate.git"
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   },
-  "keywords": [],
-  "author": "Gregor Adams <greg@pixelass.com> (http://pixelass.com)",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/pixelass/npm-boilerplate/issues"
-  },
-  "homepage": "https://github.com/pixelass/npm-boilerplate#readme",
   "devDependencies": {
+    "ava": "^0.18.2",
     "babel-cli": "^6.23.0",
-    "babel-jest": "^19.0.0",
     "babel-preset-es2015": "^6.22.0",
     "babel-preset-stage-0": "^6.22.0",
     "babelify": "^7.3.0",
@@ -41,40 +52,56 @@
     "coveralls": "^2.11.16",
     "cz-conventional-changelog": "^2.0.0",
     "errorify": "^0.3.1",
-    "eslint": "^3.16.1",
-    "eslint-config-standard": "^6.2.1",
-    "eslint-plugin-promise": "^3.4.2",
-    "eslint-plugin-standard": "^2.0.1",
     "hopsdoc": "^0.1.7",
     "http-server": "^0.9.0",
-    "husky": "^0.13.1",
-    "jest": "^19.0.1",
+    "husky": "^0.13.2",
     "jsdoc": "^3.4.3",
     "log": "^1.4.0",
     "standard-version": "^4.0.0",
-    "watchify": "^3.9.0"
+    "stylelint": "^7.9.0",
+    "stylelint-config-standard": "^16.0.0",
+    "tap-nyan": "^1.1.0",
+    "watchify": "^3.9.0",
+    "xo": "^0.17.1"
   },
   "browserify": {
     "transform": [
-      "babelify",
-      [
-        "babelify",
-        {
-          "presets": [
-            "es2015",
-            "stage-0"
-          ]
-        }
-      ]
+      "babelify"
     ]
   },
-  "config": {
-    "commitizen": {
-      "path": "./node_modules/cz-conventional-changelog"
+  "babel": {
+    "presets": [
+      "es2015",
+      "stage-0"
+    ]
+  },
+  "xo": {
+    "space": true,
+    "semicolon": false
+  },
+  "stylelint": {
+    "extends": "stylelint-config-standard",
+    "rules": {
+      "indentation": 2,
+      "number-leading-zero": null
     }
   },
-  "jest": {
-    "testRegex": ".*/src/(.*/)?spec/.*\\.js$"
-  },
-  "devPort": 3100
+  "ava": {
+    "files": [
+      "src/**/spec/*.js"
+    ],
+    "source": [
+      "src/**/*.js"
+    ],
+    "presets": [
+      "@ava/stage-4",
+      "@ava/transform-test-files"
+    ],
+    "failFast": true,
+    "tap": true,
+    "require": [
+      "babel-register"
+    ],
+    "babel": "inherit"
+  }
 }
