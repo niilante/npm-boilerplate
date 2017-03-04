@@ -4,17 +4,13 @@
 
 var _src = require('../src');
 
-var _src2 = _interopRequireDefault(_src);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
 var d = global.document;
-var h1 = d.createElement('h1');
-h1.innerHTML = (0, _src2.default)('world');
-d.body.appendChild(h1);
+var el = d.createElement('h3');
+el.innerHTML = (0, _src.hello)('world');
+d.body.appendChild(el);
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"../src":2}],2:[function(require,module,exports){
+},{"../src":3}],2:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -30,6 +26,24 @@ var hello = function hello() {
   return 'Hello ' + name;
 };
 
-exports.default = hello;
+exports.hello = hello;
+exports.default = { hello: hello };
 
-},{}]},{},[1]);
+},{}],3:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.hello = undefined;
+
+var _helloWorld = require('./hello-world');
+
+var _helloWorld2 = _interopRequireDefault(_helloWorld);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.hello = _helloWorld2.default;
+exports.default = _helloWorld2.default;
+
+},{"./hello-world":2}]},{},[1]);

@@ -6,11 +6,12 @@ A modern boilerplate for npm things with wings.
 [![Browserify](https://img.shields.io/badge/build-browserify-3c6991.svg?style=flat-square)](http://browserify.org/)
 [![Babel](https://img.shields.io/badge/babel-stage--0-f5da55.svg?style=flat-square)](http://babeljs.io/docs/plugins/preset-stage-0/)
 [![code style xo](https://img.shields.io/badge/code_style-XO-64d8c7.svg?style=flat-square)](https://github.com/sindresorhus/xo)
-[![test ava](https://img.shields.io/badge/test-🚀_ava-0e1d5c.svg?style=flat-square)](https://github.com/avajs/ava)
+[![test ava](https://img.shields.io/badge/test-🚀_AVA-0e1d5c.svg?style=flat-square)](https://github.com/avajs/ava)
 [![yarn](https://img.shields.io/badge/yarn-friendly-2c8ebb.svg?style=flat-square)](https://yarnpkg.com/)
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-44aa44.svg?style=flat-square)](http://commitizen.github.io/cz-cli/)
 [![Standard Version](https://img.shields.io/badge/release-standard%20version-44aa44.svg?style=flat-square)](https://github.com/conventional-changelog/standard-version)
-
+[![CSS modules](https://img.shields.io/badge/css--modules-ready-aa4444.svg?style=flat-square)](https://github.com/css-modules/css-modulesify)
+[![CSS next](https://img.shields.io/badge/css--next-ready-aa4444.svg?style=flat-square)](http://cssnext.io/)
 
 ## Links
 * [Documentation](https://pixelass.github.io/npm-boilerplate/api/) (Example)
@@ -128,13 +129,7 @@ You can change the rules inside the `package.json` file.
 {
   "xo": {
     "space": true,
-    "semicolon": false,
-    "ignore": [
-      "scripts/**/*.js",
-      "docs/**/*.js",
-      "coverage/**/*.js",
-      "lib/**/*.js"
-    ]
+    "semicolon": false
   },
   "stylelint": {
     "extends": "stylelint-config-standard",
@@ -180,3 +175,23 @@ You can change the rules inside the `package.json` file.
   }
 }
 ```
+
+### CSS (optional)
+
+* [css-modulesify](https://github.com/css-modules/css-modulesify) (disabled)
+* [cssnext](http://cssnext.io/) (disabled)
+
+To enable [css-modules](https://github.com/css-modules/css-modules)
+simply install the dependency and follow the comments inside `scripts/run-build.js`
+
+```shell
+yarn add css-modulesify -D
+```
+
+To enable [cssnext](http://cssnext.io/)
+simply install the dependency and follow the comments inside `scripts/run-build.js`
+
+```shell
+yarn add postcss-cssnext -D
+```
+

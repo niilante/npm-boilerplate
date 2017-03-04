@@ -103,5 +103,6 @@
       "babel-register"
     ],
     "babel": "inherit"
-  }
+  },
+  "dependencies": {}
 }
