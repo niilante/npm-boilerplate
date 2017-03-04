@@ -32,7 +32,7 @@
     "prerelease": "npm run babel; npm test",
     "posttest": "npm run lint",
     "release": "standard-version --no-verify",
-    "server": "node ./scripts/serve",
+    "server": "node ./scripts/server",
     "dev": "node ./scripts/dev",
     "start": "npm run build && npm run server",
     "test": "nyc ava --tap | tap-nyan",
