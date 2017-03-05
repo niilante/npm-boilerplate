@@ -64,6 +64,7 @@
     "stylelint": "^7.9.0",
     "stylelint-config-standard": "^16.0.0",
     "tap-nyan": "^1.1.0",
+    "uglifyify": "^3.0.4",
     "watchify": "^3.9.0",
     "xo": "^0.17.1"
   },
