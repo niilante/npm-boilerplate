@@ -39,11 +39,7 @@ exports.hello = undefined;
 
 var _helloWorld = require('./hello-world');
 
-var _helloWorld2 = _interopRequireDefault(_helloWorld);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-exports.hello = _helloWorld2.default;
-exports.default = _helloWorld2.default;
+exports.hello = _helloWorld.hello;
+exports.default = { hello: _helloWorld.hello };
 
 },{"./hello-world":2}]},{},[1]);
