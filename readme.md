@@ -19,6 +19,24 @@ A modern boilerplate for npm things with wings.
 [![CSS modules](https://img.shields.io/badge/css--modules-ready-aa4444.svg?style=flat-square)](https://github.com/css-modules/css-modulesify)
 [![CSS next](https://img.shields.io/badge/css--next-ready-aa4444.svg?style=flat-square)](http://cssnext.io/)
 
+<!-- toc -->
+
+- [Links](#links)
+- [Getting started](#getting-started)
+- [Reset git](#reset-git)
+- [Run package config](#run-package-config)
+- [Developing](#developing)
+  * [Examples](#examples)
+- [What's included?](#whats-included)
+  * [Transforms](#transforms)
+  * [Coding style](#coding-style)
+  * [Code quality](#code-quality)
+  * [Testing](#testing)
+  * [Documentation](#documentation)
+  * [CSS (optional)](#css-optional)
+
+<!-- tocstop -->
+
 ## Links
 * [Documentation](https://pixelass.github.io/npm-boilerplate/api/) (Example)
 * [Demo](https://pixelass.github.io/npm-boilerplate/) (Example)

@@ -9,8 +9,8 @@
   },
   "keywords": [
     "npm",
-    "boilerplate",
-    "yarn"
+    "yarn",
+    "boilerplate"
   ],
   "bugs": {
     "url": "https://github.com/pixelass/npm-boilerplate/issues"
@@ -43,6 +43,7 @@
       "path": "./node_modules/cz-conventional-changelog"
     }
   },
+  "dependencies": {},
   "devDependencies": {
     "ava": "^0.18.2",
     "babel-cli": "^6.23.0",
