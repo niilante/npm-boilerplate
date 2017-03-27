@@ -27,7 +27,7 @@
     "docs": "rm -rf docs/api && mkdir docs/api && jsdoc -c jsdoc.json",
     "lint": "npm run eslint; npm run stylelint",
     "stylelint": "stylelint {demo,src}/**/*.{css,less,scss}",
-    "eslint": "xo {demo,src}/**/*.js",
+    "eslint": "xo '{demo,src}/**/*.js'",
     "prepush": "npm test",
     "prerelease": "npm run babel; npm test",
     "posttest": "npm run lint",
